@@ -17,12 +17,26 @@ jobs:
     steps:
         - uses: actions/checkout@v3
         
-        - name: curl cmake-3.22.2-windows-x86_64.zip
-          shell: cmd
+        - name: curl jdk
+          shell: bash
           run: |
-            aria2c https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip &&^
-            dir &&^
-            7z.exe x OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip -o"OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7"
+            curl 'https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-debugimage_x64_windows_hotspot_16.0.2_7.zip' \
+              -H 'authority: github.com' \
+              -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+              -H 'accept-language: en-US,en;q=0.9' \
+              -H 'cookie: _octo=GH1.1.1407610412.1679806457; preferred_color_mode=light; tz=Asia%2FShanghai; _device_id=0f2c7c936f98dac257d5b7825286bff2; has_recent_activity=1; user_session=qDYjd9-Yh0_AUv4lEP0x49a0ajF64a_Mi1eLdBnaJarr-oIX; __Host-user_session_same_site=qDYjd9-Yh0_AUv4lEP0x49a0ajF64a_Mi1eLdBnaJarr-oIX; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22light%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=dirkarnez; _gh_sess=5MjsT90h8UoyGSBW8d20KvCXnxW0qTVpO0DLJ3DmY4KlkaamuNs80C4nHG12ULxz1EVeV%2B3enHuZQqn4EJVyBndNe3bS6VhSilq2Sa4zBEurWz65UwSL5EcBhQ1YIqpKmMtlhAnUBsR7KJKAsPGRGAHgP5O2JWwGmZ%2BrmRJMdP6YsZ69PEV2uNfs8dgOTszOQJiYEZUnhQkcVggsqqfGYIX%2BhqazliFIiKdSR5RGgjkN1WKlfbiOavK9s%2FtH%2BTkQpRZmXXclbefG2YHbnG0%2B8UrfBsq3sofd3NAHPyMdJ%2B%2BYR99O4A70Qsf3dZHytLq2wKQfhmtItMSOPnlrYztZLZ2jMBvMun9vd7yKRhOC10OA%2BfNbduB%2BAC0RVbuNrxVZtVQRXuwFL3X2x1k3DFrm3rKlR46R%2FMYpUqQfXHuBhjXW1cpO3QHODuVB0swn8HAiXvyQ4Im3B4%2BxygrAOebrtXYjlMNHBaaQE4FeRpmcycOr3LQbmGZWu%2BXhRIi0q%2Bndl4DIzscbDnS5hLf%2BbAHzpZQDN2YnfG%2FbJ7f%2BsL9F0u6xyDdn8CnSkbJoCO8pcrrlxJYAuClYZ%2Fygji06bXedLpvF5Q%2F%2FQRuAmPzM6CUcGd8XP%2Bf8UhcNLQoNHXTKIr8%2FbUxN73WLpB4Vf%2BKU0zzsuJ79qieXpYwUalNwH%2BA5JIRapjzYAqL%2FYr9SarBZ9wx0aGwL9dq5vQzBNAJwr6BfgZ6GQ%2FwvisxnsfB5oIJInUE5QZdh24lS5XCfw%2FaT09gXNv%2BmDM4ZUC2n%2Be9P9ijzQAeg9CmDPwaKb1V4Qc6sPOACeAtncaTQYi11D6jert35nk7hzGPVLEivq0BqJOsKGDCGSrjctPgkB04vfjiUn%2Fkp--SDVGpIUg6jNfkQcW--qrIadC2%2B%2FfTW5ZMhkhAR8g%3D%3D' \
+              -H 'referer: https://github.com/adoptium/temurin16-binaries/releases/tag/jdk-16.0.2%2B7' \
+              -H 'sec-ch-ua: "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"' \
+              -H 'sec-ch-ua-mobile: ?0' \
+              -H 'sec-ch-ua-platform: "Windows"' \
+              -H 'sec-fetch-dest: document' \
+              -H 'sec-fetch-mode: navigate' \
+              -H 'sec-fetch-site: same-origin' \
+              -H 'sec-fetch-user: ?1' \
+              -H 'upgrade-insecure-requests: 1' \
+              -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36' \
+              --compressed && \
+              7z.exe x OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip -o"OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7"
             
         - name: curl cmake-3.22.2-windows-x86_64.zip
           shell: cmd
