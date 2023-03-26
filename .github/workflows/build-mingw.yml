@@ -50,8 +50,9 @@ jobs:
             ${{ github.workspace }}\mingw64\bin;^
             ${{ github.workspace }}\PortableGit-2.38.1-64-bit\bin;^
             ${{ github.workspace }}\cmake-3.22.2-windows-x86_64\bin;^
-            %JAVA_HOME_16_X64%;^
+            %JAVA_HOME_x64%;^
             C:\Windows\System32;
+            echo %JAVA_HOME_x64% &&^
             set CD_LINUX=%CD:\=/%
             gcc --version &&^
             java --version &&^
