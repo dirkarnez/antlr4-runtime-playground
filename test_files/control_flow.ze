@@ -1,0 +1,62 @@
+print("----------basic if-else test----------")
+
+if (2 > 3) {
+    print("if else did NOT work")
+} else if (2 == 3) {
+    print("if else did NOT work")
+} else {
+    print("if else worked")
+}
+
+if (2 < 3) { // if true
+    print("if true worked")
+} else {
+    print("if true did NOT work")
+}
+
+if (2 > 3) { // if false
+    print("if false did NOT work")
+} else {
+    print("if false worked")
+}
+
+print("-------if and logic combination-------")
+
+if (2 > 3 || 4 < 5) {
+    print("or inside if worked")
+} else {
+    print("or inside if did NOT work")
+}
+
+if (-5 == -5 && 4 > 2) {
+    print("and inside if worked")
+} else {
+    print("and inside if did NOT work")
+}
+
+if ((-5 == -5 && 4 < 2) || (0 == 0.0)) {
+    print("or - and mix inside if worked")
+} else {
+    print("or - and mix inside if did NOT work")
+}
+
+print("-----------counting to 10-------------")
+for (var i = 0; i < 10; i = i+1) {
+    print(i)
+}
+
+print("------------odd-even test--------------")
+for (var i = 0; true; i = i+1) {
+    if (i < 5) {
+        continue;
+    }
+    print(i)
+    if (i % 2 == 0) {
+        print("even")
+    } else {
+        print("odd")
+    }
+    if (i > 11) {
+        break
+    }
+}

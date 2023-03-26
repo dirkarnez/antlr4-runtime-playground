@@ -3,7 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/cmake-build/antlr4_generated_src/antlrcpptest_lexer",
+                "${workspaceFolder}/cmake-build/antlr4_generated_src/antlrcpptest_parser",
                 "${env:USERPROFILE}/Downloads/antlr4-runtime-v4.11.1-winlibs-x86_64-posix-seh-gcc-12.2.0-mingw-w64ucrt-10.0.0-r4/include/antlr4-runtime/**"
             ],
             "defines": [
@@ -11,7 +13,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\Users\\19081126D.HH.001\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\bin\\gcc.exe",
+            "compilerPath": "${env:USERPROFILE}/Downloads/winlibs-x86_64-posix-seh-gcc-12.2.0-mingw-w64ucrt-10.0.0-r4/mingw64/bin/gcc.exe",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "windows-gcc-x64"
