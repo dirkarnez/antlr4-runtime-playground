@@ -3,6 +3,9 @@ antlr4-runtime-playground
 ### Notes
 - the antlr4-generated files is in memory?
 
+### TODOs
+- [x] Emscripten
+
 ### Using
 - [dirkarnez/antlr4-runtime-prebuilt](https://github.com/dirkarnez/antlr4-runtime-prebuilt)
 
