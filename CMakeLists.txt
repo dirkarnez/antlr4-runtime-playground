@@ -89,8 +89,6 @@ add_dependencies(${PROJECT_NAME} antlr4_static)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE antlr4_static)
 
-
-
-
-# uncomment for emscripten build
-set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-sDEMANGLE_SUPPORT=1 -sFORCE_FILESYSTEM=1 --bind")
+if (EMSCRIPTEN)
+  set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-sDEMANGLE_SUPPORT=1 -sFORCE_FILESYSTEM=1 --bind")
+endif()
